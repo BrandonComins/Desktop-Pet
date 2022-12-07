@@ -1,8 +1,8 @@
 import tkinter as tk
 import time
 import pyautogui
-import threading
 import random
+import Constants
 
 class pet():
     def __init__(self):
@@ -83,23 +83,23 @@ class pet():
             self.state_timer = time.time()
             print("State:", self.state)
 
-        if self.state == 0: # idle state
+        if self.state == Constants.s_idle: # idle state
             self.x += 0
             self.y += 0
             # do an idle animation
-        elif self.state == 1 and self.x < width - 70 : # move right
+        elif self.state == Constants.s_walk_right and self.x < width - 70 :
             self.x += 1
             self.y += 0
-        elif self.state == 2 and self.x > 0: # move left
+        elif self.state == Constants.s_walk_left and self.x > 0:
             self.x -= 1
             self.y += 0       
-        elif self.state == 3 and self.y > 0: # move up
+        elif self.state == Constants.s_walk_up and self.y > 0: 
             self.x += 0
             self.y += -1
-        elif self.state == 4 and self. y < height - 70: # move down
+        elif self.state == 4 and Constants.s_walk_down < height - 70: 
             self.x += 0
             self.y += 1
-        elif self.state == 5: # follow and take mouse 
+        elif self.state == Constants.s_chase_mouse: 
             #control for x dir
             if pyautogui.position()[0] > self.x:
                 self.x += 1
@@ -107,6 +107,7 @@ class pet():
                 self.x -= 1
             else:
                 self.x += 0
+            
             # control for y dir
             if pyautogui.position()[1] > self.y:
                 self.y += 1
