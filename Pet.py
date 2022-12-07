@@ -15,7 +15,7 @@ class pet():
         self.window = tk.Tk()
 
         # placeholder image
-        self.walking_right = [tk.PhotoImage(file='walking_right.gif', format='gif -index %i' % (i)) for i in range(4)]
+        self.walking_right = [tk.PhotoImage(file='pictures\walking_right.gif', format='gif -index %i' % (i)) for i in range(4)]
         self.frame_index = 0
         self.img = self.walking_right[self.frame_index]
 
