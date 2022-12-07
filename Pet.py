@@ -74,9 +74,6 @@ class pet():
         self.window.after(5, self.update)
         
     def doAction(self):
-        width = pyautogui.size()[0]
-        height = pyautogui.size()[1]
-
         
         if time.time() > self.state_timer + 3:
             self.state = random.randint(1, 5)
@@ -87,7 +84,7 @@ class pet():
             self.x += 0
             self.y += 0
             # do an idle animation
-        elif self.state == Constants.s_walk_right and self.x < width - 70 :
+        elif self.state == Constants.s_walk_right and self.x < pyautogui.size()[0] - 70:
             self.x += 1
             self.y += 0
         elif self.state == Constants.s_walk_left and self.x > 0:
@@ -96,7 +93,7 @@ class pet():
         elif self.state == Constants.s_walk_up and self.y > 0: 
             self.x += 0
             self.y += -1
-        elif self.state == 4 and Constants.s_walk_down < height - 70: 
+        elif self.state == 4 and Constants.s_walk_down < pyautogui.size()[1] - 70: 
             self.x += 0
             self.y += 1
         elif self.state == Constants.s_chase_mouse: 
@@ -121,7 +118,7 @@ class pet():
                 self.x += 10
                 self.y += 0
                 pyautogui.moveTo(self.x, self.y) 
-                self.state_timer = time.time()
+                self.state_timer = time.time() #resets timer, so state won't change until mouse is free
 
 
  
