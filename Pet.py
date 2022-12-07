@@ -77,10 +77,11 @@ class pet():
         width = pyautogui.size()[0]
         height = pyautogui.size()[1]
 
-        print(self.state)
+        
         if time.time() > self.state_timer + 3:
             self.state = random.randint(1, 5)
             self.state_timer = time.time()
+            print("State:", self.state)
 
         if self.state == 0: # idle state
             self.x += 0
