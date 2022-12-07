@@ -4,8 +4,9 @@ WORK IN PROGRESS
 
 
 To make this program work:
-1. Go to install folder
-2. Run install.bat
+1. Download ENTIRE directory
+2. Go to install folder
+3. Run install.bat
 
 
 
