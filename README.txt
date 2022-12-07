@@ -4,9 +4,8 @@ WORK IN PROGRESS
 
 
 To make this program work:
-1. Have pip installed 
-2. Open cmd in code's directory
-3. Type into the cmd: pip install -r requirements.txt
+1. Go to install folder
+2. Run install.bat
 
 
 
